@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Disambelin Aja - Pedas Gurih Nikmat</title>
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Plus Jakarta Sans & Poppins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&family=Poppins:ital,wght@0,800;1,400;1,600&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                        accent: ['Poppins', 'sans-serif'],
+                    },
+                    colors: {
+                        chili: {
+                            50: '#fff1f1',
+                            100: '#ffdfdf',
+                            200: '#ffc5c5',
+                            500: '#ef4444',
+                            600: '#dc2626',
+                            700: '#b91c1c',
+                            800: '#991b1b',
+                            900: '#7f1d1d',
+                        },
+                        amberSpicy: {
+                            400: '#fbbf24',
+                            500: '#f59e0b',
+                            600: '#d97706',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .gradient-text {
+            background: linear-gradient(135deg, #ef4444 0%, #f97316 50%, #f59e0b 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .hero-glow {
+            background: radial-gradient(circle, rgba(239, 68, 68, 0.15) 0%, rgba(255, 247, 237, 0) 70%);
+        }
+        @keyframes subtleFloat {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-8px) rotate(1deg); }
+        }
+        .animate-float {
+            animation: subtleFloat 4s ease-in-out infinite;
+        }
+    </style>
+</head>
+<body class="bg-amber-50/50 text-gray-800 antialiased selection:bg-chili-500 selection:text-white">
+
+    <header class="sticky top-0 z-40 bg-white/90 backdrop-blur-md border-b border-amber-100 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <!-- Brand logo left side -->
+                <a href="#beranda" class="flex items-center space-x-2 group">
+                    <span class="text-2xl">🌶️</span>
+                    <span class="font-bold text-xl tracking-tight text-gray-900 group-hover:text-chili-600 transition">Disambelin Aja</span>
+                </a>
+
+                <!-- Navigation menu -->
+                <nav class="hidden md:flex space-x-8 text-sm font-semibold text-gray-600">
+                    <a href="#beranda" class="hover:text-chili-600 transition">Beranda</a>
+                    <a href="#variasi" class="hover:text-chili-600 transition">Variasi Sambal</a>
+                    <a href="#catatan" class="hover:text-chili-600 transition">Catatan Menu</a>
+                    <a href="#galeri" class="hover:text-chili-600 transition">Galeri Foto</a>
+                </nav>
+
+                <!-- Order CTA Button -->
+                <div class="flex items-center">
+                    <button onclick="openOrderModal('Umum')" class="bg-gradient-to-r from-chili-600 to-amberSpicy-600 hover:from-chili-700 hover:to-amberSpicy-700 text-white px-5 py-2 rounded-full font-bold text-sm shadow-md hover:shadow-lg transition transform hover:-translate-y-0.5 flex items-center gap-2">
+                        <span>Pesan WhatsApp</span>
+                        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12c0 1.82.49 3.53 1.35 5L2 22l5.12-1.31A9.93 9.93 0 0012 22c5.52 0 10-4.48 10-10S17.52 2 12 2z"/></svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section id="beranda" class="relative py-16 md:py-24 overflow-hidden hero-glow">
+        <div class="max-w-5xl mx-auto px-4 text-center relative z-10">
+            
+            <!-- Badge Accent -->
+            <div class="inline-flex items-center gap-2 bg-chili-50 border border-chili-200 px-4 py-1.5 rounded-full text-chili-700 text-xs sm:text-sm font-bold mb-6 shadow-sm">
+                <span>🔥</span> <span>100% Olahan Cabai Segar & Bahan Alami</span>
+            </div>
+
+            <!-- 1. JUDUL UTAMA DI TENGAH -->
+            <h1 class="text-5xl sm:text-7xl md:text-8xl font-black text-gray-900 tracking-tight leading-none mb-2 drop-shadow-sm">
+                <span class="gradient-text">Disambelin Aja</span>
+            </h1>
+
+            <!-- 2. SUB JUDUL TERKECIL DIBAWAHNYA -->
+            <p class="text-sm sm:text-base md:text-lg font-accent italic font-semibold text-chili-700 tracking-wider mb-8 uppercase">
+                disambelin aja
+            </p>
+
+            <p class="max-w-2xl mx-auto text-gray-600 text-base sm:text-lg leading-relaxed mb-10">
+                Solusi makan makin lahab! Aneka varian sambal rumahan siap saji dengan rempah melimpah. Sekali coba, pasti nagih dan nambah nasi!
+            </p>
+
+            <!-- Quick Action Buttons -->
+            <div class="flex flex-col sm:flex-row justify-center items-center gap-4">
+                <a href="#variasi" class="w-full sm:w-auto bg-chili-600 hover:bg-chili-700 text-white px-8 py-3.5 rounded-xl font-bold shadow-lg shadow-chili-500/20 transition transform hover:-translate-y-0.5">
+                    Lihat Variasi Sambal
+                </a>
+                <a href="#catatan" class="w-full sm:w-auto bg-white border border-gray-200 hover:border-chili-300 text-gray-700 hover:text-chili-600 px-8 py-3.5 rounded-xl font-bold shadow-sm transition">
+                    Lihat Catatan Menu
+                </a>
+            </div>
+
+        </div>
+
+        <!-- Decorative elements -->
+        <div class="mt-12 flex justify-center items-center gap-4 opacity-80 pointer-events-none">
+            <span class="text-3xl animate-float">🌶️</span>
+            <span class="text-4xl animate-float" style="animation-delay: 1s;">🧄</span>
+            <span class="text-3xl animate-float" style="animation-delay: 2s;">🦑</span>
+            <span class="text-4xl animate-float" style="animation-delay: 1.5s;">🍗</span>
+        </div>
+    </section>
+
+    <section id="variasi" class="py-16 bg-white border-y border-amber-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="text-center max-w-2xl mx-auto mb-12">
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-gray-900">Variasi Menu <span class="text-chili-600">Disambelin Aja</span></h2>
+                <p class="text-gray-600 mt-2">Pilih varian favoritmu yang bikin makan siang & malam jadi lebih berselera!</p>
+            </div>
+
+            <!-- Product Cards Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                
+                <!-- CARD 1: SAMBAL CUMI -->
+                <div class="bg-amber-50/40 rounded-2xl border border-amber-200/80 overflow-hidden shadow-sm hover:shadow-md transition flex flex-col justify-between group">
+                    <div>
+                        <div class="relative h-52 overflow-hidden bg-gray-100">
+                            <img src="https://placehold.co/600x400/991b1b/ffffff?text=Sambal+Cumi+Gurilem" alt="Sambal Cumi Disambelin Aja" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                            <span class="absolute top-3 left-3 bg-chili-600 text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider shadow">Best Seller</span>
+                        </div>
+                        <div class="p-5">
+                            <div class="flex justify-between items-start mb-2">
+                                <h3 class="font-bold text-xl text-gray-900">Sambal Cumi</h3>
+                                <span class="text-xs font-bold text-amberSpicy-600 bg-amber-100 px-2.5 py-1 rounded-full">Pedas Level 4</span>
+                            </div>
+                            <p class="text-gray-600 text-sm leading-relaxed mb-4">
+                                Potongan cumi asin gurih dan kenyal direbus sempurna, dipadukan bumbu sambal segar merah merona.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="p-5 pt-0">
+                        <div class="flex items-center justify-between pt-3 border-t border-amber-200/60">
+                            <div>
+                                <span class="text-xs text-gray-500 block">Harga/Kemasan</span>
+                                <span class="text-lg font-black text-chili-700">Rp 32.000</span>
+                            </div>
+                            <button onclick="openOrderModal('Sambal Cumi')" class="bg-chili-600 hover:bg-chili-700 text-white px-4 py-2 rounded-lg font-bold text-sm shadow transition">
+                                Pesan
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CARD 2: SAMBAL AYAM -->
+                <div class="bg-amber-50/40 rounded-2xl border border-amber-200/80 overflow-hidden shadow-sm hover:shadow-md transition flex flex-col justify-between group">
+                    <div>
+                        <div class="relative h-52 overflow-hidden bg-gray-100">
+                            <img src="https://placehold.co/600x400/c2410c/ffffff?text=Sambal+Ayam+Suwir" alt="Sambal Ayam Disambelin Aja" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                            <span class="absolute top-3 left-3 bg-amberSpicy-600 text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider shadow">Favorit</span>
+                        </div>
+                        <div class="p-5">
+                            <div class="flex justify-between items-start mb-2">
+                                <h3 class="font-bold text-xl text-gray-900">Sambal Ayam</h3>
+                                <span class="text-xs font-bold text-amberSpicy-600 bg-amber-100 px-2.5 py-1 rounded-full">Pedas Level 3</span>
+                            </div>
+                            <p class="text-gray-600 text-sm leading-relaxed mb-4">
+                                Suwiran daging ayam pilihan yang melimpah diresepkan dengan ramuan sambal rempah meresap sampai ke serat.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="p-5 pt-0">
+                        <div class="flex items-center justify-between pt-3 border-t border-amber-200/60">
+                            <div>
+                                <span class="text-xs text-gray-500 block">Harga/Kemasan</span>
+                                <span class="text-lg font-black text-chili-700">Rp 30.000</span>
+                            </div>
+                            <button onclick="openOrderModal('Sambal Ayam')" class="bg-chili-600 hover:bg-chili-700 text-white px-4 py-2 rounded-lg font-bold text-sm shadow transition">
+                                Pesan
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CARD 3: SAMBAL BAWANG -->
+                <div class="bg-amber-50/40 rounded-2xl border border-amber-200/80 overflow-hidden shadow-sm hover:shadow-md transition flex flex-col justify-between group">
+                    <div>
+                        <div class="relative h-52 overflow-hidden bg-gray-100">
+                            <img src="https://placehold.co/600x400/b91c1c/ffffff?text=Sambal+Bawang+Pedas" alt="Sambal Bawang Disambelin Aja" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                        </div>
+                        <div class="p-5">
+                            <div class="flex justify-between items-start mb-2">
+                                <h3 class="font-bold text-xl text-gray-900">Sambal Bawang</h3>
+                                <span class="text-xs font-bold text-red-700 bg-red-100 px-2.5 py-1 rounded-full">Pedas Level 5</span>
+                            </div>
+                            <p class="text-gray-600 text-sm leading-relaxed mb-4">
+                                Racikan bawang merah pilihan bersanding dengan cabai rawit merah pedas maksimal. Pedasnya juara!
+                            </p>
+                        </div>
+                    </div>
+                    <div class="p-5 pt-0">
+                        <div class="flex items-center justify-between pt-3 border-t border-amber-200/60">
+                            <div>
+                                <span class="text-xs text-gray-500 block">Harga/Kemasan</span>
+                                <span class="text-lg font-black text-chili-700">Rp 25.000</span>
+                            </div>
+                            <button onclick="openOrderModal('Sambal Bawang')" class="bg-chili-600 hover:bg-chili-700 text-white px-4 py-2 rounded-lg font-bold text-sm shadow transition">
+                                Pesan
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CARD 4: SAMBAL HIJAU TERI -->
+                <div class="bg-amber-50/40 rounded-2xl border border-amber-200/80 overflow-hidden shadow-sm hover:shadow-md transition flex flex-col justify-between group">
+                    <div>
+                        <div class="relative h-52 overflow-hidden bg-gray-100">
+                            <img src="https://placehold.co/600x400/15803d/ffffff?text=Sambal+Hijau+Teri" alt="Sambal Hijau Teri Disambelin Aja" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                        </div>
+                        <div class="p-5">
+                            <div class="flex justify-between items-start mb-2">
+                                <h3 class="font-bold text-xl text-gray-900">Sambal Hijau Teri</h3>
+                                <span class="text-xs font-bold text-emerald-700 bg-emerald-100 px-2.5 py-1 rounded-full">Pedas Level 2</span>
+                            </div>
+                            <p class="text-gray-600 text-sm leading-relaxed mb-4">
+                                Cabai hijau segar ditumis aromatis dengan ikan teri renyah. Rasa gurih dan tidak terlalu menusuk.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="p-5 pt-0">
+                        <div class="flex items-center justify-between pt-3 border-t border-amber-200/60">
+                            <div>
+                                <span class="text-xs text-gray-500 block">Harga/Kemasan</span>
+                                <span class="text-lg font-black text-chili-700">Rp 28.000</span>
+                            </div>
+                            <button onclick="openOrderModal('Sambal Hijau Teri')" class="bg-chili-600 hover:bg-chili-700 text-white px-4 py-2 rounded-lg font-bold text-sm shadow transition">
+                                Pesan
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <section id="catatan" class="py-16 bg-amber-50/60">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="text-center mb-12">
+                <span class="text-chili-600 font-bold text-sm uppercase tracking-widest block mb-1">Penting Diketahui</span>
+                <h2 class="text-3xl font-extrabold text-gray-900">Catatan Khusus Varian Utama</h2>
+                <p class="text-gray-600 text-sm mt-1">Panduan rasa dan keunggulan olahan Sambal Cumi & Sambal Ayam kami</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                
+                <!-- CATATAN SAMBAL CUMI -->
+                <div class="bg-white p-6 sm:p-8 rounded-2xl shadow-sm border border-chili-100 relative overflow-hidden">
+                    <div class="absolute -right-4 -top-4 w-24 h-24 bg-chili-50 rounded-full z-0 opacity-50"></div>
+                    <div class="relative z-10">
+                        <div class="flex items-center gap-3 mb-4">
+                            <span class="p-3 bg-chili-100 text-chili-700 rounded-xl text-2xl">🦑</span>
+                            <div>
+                                <h3 class="text-xl font-bold text-gray-900">Catatan Sambal Cumi</h3>
+                                <span class="text-xs text-chili-600 font-semibold">Cumi Asin Premium & Tanpa Bau Amis</span>
+                            </div>
+                        </div>
+                        
+                        <ul class="space-y-3 text-sm text-gray-600">
+                            <li class="flex items-start gap-2">
+                                <span class="text-chili-500 font-bold">✓</span>
+                                <span><strong>Kualitas Cumi:</strong> Menggunakan cumi telur/asin pilihan yang telah dibersihkan secara teliti sehingga teksturnya empuk dan tidak alot.</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <span class="text-chili-500 font-bold">✓</span>
+                                <span><strong>Keseimbangan Rasa:</strong> Rasa asin gurih dari cumi berpadu pas dengan pedas manis segar dari sambal racikan.</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <span class="text-chili-500 font-bold">✓</span>
+                                <span><strong>Saran Penyajian:</strong> Sangat nikmat diurap langsung dengan nasi hangat yang masih ngebul.</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- CATATAN SAMBAL AYAM -->
+                <div class="bg-white p-6 sm:p-8 rounded-2xl shadow-sm border border-amber-200 relative overflow-hidden">
+                    <div class="absolute -right-4 -top-4 w-24 h-24 bg-amber-50 rounded-full z-0 opacity-50"></div>
+                    <div class="relative z-10">
+                        <div class="flex items-center gap-3 mb-4">
+                            <span class="p-3 bg-amber-100 text-amberSpicy-600 rounded-xl text-2xl">🍗</span>
+                            <div>
+                                <h3 class="text-xl font-bold text-gray-900">Catatan Sambal Ayam</h3>
+                                <span class="text-xs text-amberSpicy-600 font-semibold">Daging Ayam Melimpah & Rempah Meresap</span>
+                            </div>
+                        </div>
+                        
+                        <ul class="space-y-3 text-sm text-gray-600">
+                            <li class="flex items-start gap-2">
+                                <span class="text-amberSpicy-600 font-bold">✓</span>
+                                <span><strong>Suwiran Padat:</strong> Tidak cuma minyak, isian daging ayam suwir sangat royal dan memuaskan di setiap sendokan.</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <span class="text-amberSpicy-600 font-bold">✓</span>
+                                <span><strong>Proses Ungkep:</strong> Daging ayam diungkep bumbu rempah terlebih dahulu sebelum dicampur ke dalam tumisan sambal.</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <span class="text-amberSpicy-600 font-bold">✓</span>
+                                <span><strong>Saran Penyajian:</strong> Cocok untuk lauk praktis saat bepergian, bekal kantor, atau teman lauk mie instan.</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <section id="galeri" class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-10">
+                <h2 class="text-3xl font-extrabold text-gray-900">Galeri Variasi <span class="text-chili-600">Disambelin Aja</span></h2>
+                <p class="text-gray-600 text-sm mt-1">Intip kelezatan tekstur sambal asli racikan kami</p>
+            </div>
+
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                <div class="group relative h-48 sm:h-64 rounded-xl overflow-hidden shadow-sm">
+                    <img src="https://placehold.co/400x500/7f1d1d/ffffff?text=Sambal+Cumi+Melimpah" alt="Galeri Sambal Cumi" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition duration-300 flex items-end p-4">
+                        <span class="text-white text-sm font-bold">Sambal Cumi Melimpah</span>
+                    </div>
+                </div>
+
+                <div class="group relative h-48 sm:h-64 rounded-xl overflow-hidden shadow-sm">
+                    <img src="https://placehold.co/400x500/9a3412/ffffff?text=Sambal+Ayam+Suwir" alt="Galeri Sambal Ayam" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition duration-300 flex items-end p-4">
+                        <span class="text-white text-sm font-bold">Sambal Ayam Suwir Gurih</span>
+                    </div>
+                </div>
+
+                <div class="group relative h-48 sm:h-64 rounded-xl overflow-hidden shadow-sm">
+                    <img src="https://placehold.co/400x500/b91c1c/ffffff?text=Tekstur+Sambal+Bawang" alt="Galeri Sambal Bawang" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition duration-300 flex items-end p-4">
+                        <span class="text-white text-sm font-bold">Tekstur Sambal Bawang</span>
+                    </div>
+                </div>
+
+                <div class="group relative h-48 sm:h-64 rounded-xl overflow-hidden shadow-sm">
+                    <img src="https://placehold.co/400x500/047857/ffffff?text=Sambal+Hijau+Segar" alt="Galeri Sambal Hijau" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition duration-300 flex items-end p-4">
+                        <span class="text-white text-sm font-bold">Sambal Hijau Segar</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-16 bg-gradient-to-r from-chili-800 via-chili-700 to-amberSpicy-600 text-white text-center">
+        <div class="max-w-4xl mx-auto px-4">
+            <h2 class="text-3xl sm:text-4xl font-black mb-4">Lagi Lapar? Disambelin Aja!</h2>
+            <p class="text-amber-100 max-w-xl mx-auto mb-8 text-sm sm:text-base">
+                Siapkan nasi hangat di rumah, sisanya biar Disambelin Aja yang bikin makanmu makin berselera.
+            </p>
+            <button onclick="openOrderModal('Paket Hemat')" class="bg-amberSpicy-500 hover:bg-amberSpicy-600 text-gray-900 px-8 py-3.5 rounded-full font-extrabold text-base shadow-xl transition transform hover:scale-105">
+                Pesan Lewat WhatsApp Sekarang
+            </button>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-gray-400 py-8 border-t border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 text-center">
+            <div class="flex items-center justify-center space-x-2 mb-3">
+                <span class="text-xl">🌶️</span>
+                <span class="font-bold text-white text-lg">Disambelin Aja</span>
+            </div>
+            <p class="text-xs text-gray-500 mb-2">Aneka Olahan Sambal Rumahan Khas Nusantara</p>
+            <p class="text-xs text-gray-600">&copy; 2026 Disambelin Aja. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <div id="orderModal" class="fixed inset-0 z-50 hidden items-center justify-center bg-black/60 backdrop-blur-sm p-4">
+        <div class="bg-white rounded-2xl max-w-md w-full p-6 shadow-2xl relative animate-float" style="animation-duration: 0.3s;">
+            <button onclick="closeOrderModal()" class="absolute top-4 right-4 text-gray-400 hover:text-gray-600">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+            </button>
+
+            <div class="text-center">
+                <div class="w-14 h-14 bg-emerald-100 text-emerald-600 rounded-full flex items-center justify-center mx-auto mb-4 text-2xl">
+                    💬
+                </div>
+                <h3 class="text-2xl font-bold text-gray-900 mb-1">Pesan via WhatsApp</h3>
+                <p class="text-xs text-gray-500 mb-6">Anda akan terhubung langsung ke layanan pemesanan official <br><span class="font-bold text-chili-600">Disambelin Aja</span>.</p>
+
+                <div class="bg-amber-50 p-3 rounded-xl border border-amber-200 mb-6 text-left">
+                    <span class="text-xs text-gray-500 block">Varian Pilihan:</span>
+                    <span id="modalProductName" class="font-bold text-gray-800 text-sm">Sambal Cumi</span>
+                </div>
+
+                <div class="space-y-3">
+                    <a id="waDirectBtn" href="#" target="_blank" class="w-full bg-emerald-600 hover:bg-emerald-700 text-white py-3 rounded-xl font-bold flex items-center justify-center gap-2 shadow transition">
+                        <span>Lanjutkan ke WhatsApp</span>
+                    </a>
+                    <button onclick="closeOrderModal()" class="w-full bg-gray-100 hover:bg-gray-200 text-gray-600 py-2.5 rounded-xl font-semibold text-sm transition">
+                        Batal
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function openOrderModal(productName) {
+            const modal = document.getElementById('orderModal');
+            const modalProductName = document.getElementById('modalProductName');
+            const waDirectBtn = document.getElementById('waDirectBtn');
+
+            modalProductName.innerText = productName;
+
+            // WhatsApp Message Formatting
+            const phoneNumber = '6281234567890'; // Silakan ganti nomor WhatsApp Admin
+            const message = encodeURIComponent(`Halo Admin Disambelin Aja, saya ingin memesan variasi: *${productName}*. Mohon informasi total & ongkirnya ya!`);
+            
+            waDirectBtn.href = `https://wa.me/${phoneNumber}?text=${message}`;
+
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+        }
+
+        function closeOrderModal() {
+            const modal = document.getElementById('orderModal');
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
+        }
+
+        // Close modal on background click
+        window.addEventListener('click', (e) => {
+            const modal = document.getElementById('orderModal');
+            if (e.target === modal) {
+                closeOrderModal();
+            }
+        });
+    </script>
+</body>
+</html>
